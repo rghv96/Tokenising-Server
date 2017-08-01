@@ -7,30 +7,24 @@ import javax.persistence.Id;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Token {
-   // @Id
-    //@GeneratedValue(strategy=GenerationType.AUTO)
-    //private Integer id;
+
 	@Id
     private String token;
 
     private String card;
 
-	/*public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}*/
+    private String lastfour;
 
 	public Token() {
         this.card = null;
         this.token = null;
+        this.lastfour = null;
     }
 
-	public Token(String token, String card) {
+	public Token(String token, String card, String lastfour) {
         this.card = card;
         this.token = token;
+        this.lastfour = lastfour;
     }
     
 	public String getToken() {
@@ -47,6 +41,14 @@ public class Token {
 
 	public void setCard(String card) {
 		this.card = card;
+	}
+
+	public String getLastfour() {
+		return lastfour;
+	}
+
+	public void setLastfour(String lastfour) {
+		this.lastfour= lastfour;
 	}
 
 
