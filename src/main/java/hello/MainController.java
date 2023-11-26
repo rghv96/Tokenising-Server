@@ -1,5 +1,6 @@
 package hello;
 
+import java.security.SecureRandom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,7 +43,7 @@ public class MainController {
 		AESEncryption obj = new AESEncryption();
 		Dsm d = new Dsm();
 		String token = "";
-    	Random rand = new Random();
+    	Random rand = new SecureRandom();
     	char[] ch=card.toCharArray();
     	String passkey = "secret";
 
